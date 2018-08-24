@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SpinnerImages</string>
+    <string name="title_dificultad_spinner">Nivel de dificultad</string>
+</resources>
