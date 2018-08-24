@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FormularioDinamico</string>
+    <string name="titulo_layout">Configuración inicial</string>
+    <string name="opcion_configuracion">Configuración default</string>
+    <string name="nivel_textEdit">Nivel de juego</string>
+    <string name="mesaje_alerte">i nuevos niveles desbloquedos</string>
+
+</resources>
