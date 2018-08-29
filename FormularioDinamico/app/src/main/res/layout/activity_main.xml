@@ -1,109 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-
-    <android.support.design.widget.TabLayout
         android:layout_width="match_parent"
-        android:elevation="8dp"
-        app:tabMode="scrollable"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Left" />
-
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Center" />
-
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Right" />
-    </android.support.design.widget.TabLayout>
-    <FrameLayout
-        android:id="@+id/zona_mensajes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent">
-            <TextView
-                android:id="@+id/mensaje"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/mesaje_alerte"
-                />
-    </FrameLayout>
-        android:id="@+id/zona_mensajes">
-</android.support.design.widget.AppBarLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorFondo"
-        android:elevation="8dp"
-        android:orientation="vertical">
-        <android.support.constraint.ConstraintLayout
+        <android.support.design.widget.TabLayout
+            android:id="@+id/secciones_tabLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:layout_height="match_parent"
+            android:elevation="12dp"
+            app:tabGravity="fill"
+            app:tabTextColor="@color/colorFondoPanel"
+            tools:targetApi="lollipop">
 
-            <TextView
-                android:id="@+id/titulo_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/titulo_layout"
-                android:textSize="12pt"
-                android:textStyle="bold"
-                android:layout_margin="8dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+        </android.support.design.widget.TabLayout>
+    </android.support.design.widget.AppBarLayout>
 
-            <TextView
-                android:id="@+id/opcion_configuracion_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:text="@string/opcion_configuracion"
-                app:layout_constraintRight_toLeftOf="@id/opciones_swicth"
-                app:layout_constraintTop_toBottomOf="@+id/titulo_textView" />
+    <android.support.v4.view.ViewPager
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
-            <Switch
-                android:id="@+id/opciones_swicth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/titulo_textView"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="12dp"
-                android:checked="true"/>
-        </android.support.constraint.ConstraintLayout>
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/padre"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            android:background="@color/colorFondo"
-            android:elevation="8dp">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/nivel_textEdit" />
-        </android.support.constraint.ConstraintLayout>
-    </LinearLayout>
+    </android.support.v4.view.ViewPager>
 
 </LinearLayout>

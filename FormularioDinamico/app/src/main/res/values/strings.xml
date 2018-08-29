@@ -1,8 +1,26 @@
 <resources>
     <string name="app_name">FormularioDinamico</string>
-    <string name="titulo_layout">Configuración inicial</string>
+    <string name="titulo_layout_configuraciones">Configuración inicial</string>
+    <string name="titulo_layout_instrucciones">Instrucciones del juego</string>
     <string name="opcion_configuracion">Configuración default</string>
-    <string name="nivel_textEdit">Nivel de juego</string>
+    <string name="nombre_textEdit">Nombre del jugador</string>
     <string name="mesaje_alerte">i nuevos niveles desbloquedos</string>
+    <string name="configuracion">Configuraciones</string>
+    <string name="center">Intrucciones</string>
+    <string name="right">Right</string>
+
+    <string name="texto_config_basica">Se iniciara un nuevo juego en nivel principiante con las configuraciones por default</string>
+
+    <string-array name="nivels_juego">
+        <item>Principiante</item>
+        <item>Facil</item>
+        <item>Intermedio</item>
+        <item>Dificil</item>
+        <item>Experto</item>
+
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
