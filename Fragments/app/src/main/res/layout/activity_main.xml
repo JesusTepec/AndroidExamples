@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/fondo-1">
 
-   <Spinner
-       android:id="@+id/dificultad_spinner"
-       android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""/>
 
-       android:layout_height="wrap_content"
-       android:gravity="center"
-       android:prompt="@string/title_dificultad_spinner"
-       android:spinnerMode="dropdown"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src=""
+        />
 
 </android.support.constraint.ConstraintLayout>
