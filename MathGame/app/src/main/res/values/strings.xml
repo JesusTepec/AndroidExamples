@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MathGame</string>
+    <string name="titilo_juego">Juega con las mates</string>
+    <string name="descripcion_imagen">imagen logo de la app</string>
+    <string name="button_text_play">Play</string>
+    <string name="button_text_high_scores">High Scores</string>
+    <string name="button_text_quit">Quit</string>
+</resources>
