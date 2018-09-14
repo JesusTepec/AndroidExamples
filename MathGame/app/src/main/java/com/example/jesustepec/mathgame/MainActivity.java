@@ -35,14 +35,17 @@ public class MainActivity extends Activity {
         setContentView(squashCourtView);
 
         sizeScreen();
-        int widthR = randint(25);
+        int widthR ;
 
         bolitas = new ArrayList<>();
-        Bola bolita = new Bola(randint(widthScreen - widthR), randint(50), widthR);
-        bolita.setColor(Color.argb(255, randint(255), randint(255), randint(255)));
-        bolita.setVx(10);
-        bolita.setVy(10);
-        bolitas.add(bolita);
+        for(int i = 0; i < 20; i++) {
+            widthR = randint(15);
+            Bola bolita = new Bola(randint(widthScreen - widthR), randint(50), widthR);
+            bolita.setColor(Color.argb(255, randint(255), randint(255), randint(255)));
+            bolita.setVx(randFloat(12));
+            bolita.setVy(randFloat(12));
+            bolitas.add(bolita);
+        }
 
     }
 
@@ -133,12 +136,17 @@ public class MainActivity extends Activity {
         public boolean onTouchEvent(MotionEvent motionEvent) {
             switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
                 case MotionEvent.ACTION_DOWN:
-                    Bola bolita = new Bola(motionEvent.getX(), motionEvent.getY(), randint(25));
-                    bolita.setColor(Color.argb(255, randint(255), randint(255), randint(255)));
-                    int v = randint(10);
-                    bolita.setVy(v);
-                    bolita.setVx(v);
-                    bolitas.add(bolita);
+                    float x = motionEvent.getX();
+                    float y = motionEvent.getY();
+                    for (int i = 0; i < bolitas.size(); i++){
+                        bolitas.get(i).setX(x + randIntReal(-2, 2));
+                        bolitas.get(i).setY(y + randIntReal(-2, 2));
+
+                        //int direccion = randint(12) * randDireccion();
+                        bolitas.get(i).setVx(bolitas.get(i).getVx() * randDireccion());
+                        bolitas.get(i).setVy(bolitas.get(i).getVy() * randDireccion());
+
+                    }
                     break;
 
                 case MotionEvent.ACTION_UP:
@@ -187,4 +195,18 @@ public class MainActivity extends Activity {
         return randomNumber.nextInt((max - 5) + 1) + 5;
     }
 
+    private float randFloat(int max){
+        Random randomNumber = new Random();
+        return randomNumber.nextFloat() * (max + 5) + 5;
+    }
+
+    private int randIntReal(int min, int max){
+        Random randomNumber = new Random();
+        return randomNumber.nextInt((max - min) + 1) + min;
+    }
+
+    private int randDireccion(){
+        int valores[] = {1, -1};
+        return valores[randIntReal(0,1)];
+    }
 }
