@@ -1,5 +1,6 @@
 package com.example.jesustepec.mathgame;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -20,13 +22,9 @@ public class MainActivity extends Activity {
     Canvas canvas;
     SquashCourtView squashCourtView;
 
-    Point ballPosition;
-
-    ArrayList<Point> points;
+    ArrayList<Bola> bolitas;
     long lastFrameTime;
     int fps;
-    int aux;
-
     int widthScreen;
     int heightScreen;
 
@@ -37,16 +35,14 @@ public class MainActivity extends Activity {
         setContentView(squashCourtView);
 
         sizeScreen();
+        int widthR = randint(25);
 
-        ballPosition = new Point();
-        ballPosition.x = randint(widthScreen - 20);
-        ballPosition.y = 1 + 20;
-        aux = 50;
-
-        points = new ArrayList<>();
-        points.add(ballPosition);
-        points.add(new Point(randint(widthScreen - 20), 21));
-        points.add(new Point(randint(widthScreen - 20), 21));
+        bolitas = new ArrayList<>();
+        Bola bolita = new Bola(randint(widthScreen - widthR), randint(50), widthR);
+        bolita.setColor(Color.argb(255, randint(255), randint(255), randint(255)));
+        bolita.setVx(10);
+        bolita.setVy(10);
+        bolitas.add(bolita);
 
     }
 
@@ -72,26 +68,27 @@ public class MainActivity extends Activity {
 
         }
 
-
         public void updateCourt() {
-            for(Point point : points) {
-                point.y += aux;
-                if (point.y > heightScreen) {
-                    point.y = 21;
-                    point.x = randint(widthScreen - 20);
+
+            for(int i = 0; i < bolitas.size(); i++) {
+                bolitas.get(i).setX(bolitas.get(i).getX() + bolitas.get(i).getVx());
+                bolitas.get(i).setY(bolitas.get(i).getY() + bolitas.get(i).getVy());
+                if (bolitas.get(i).getY() > heightScreen - bolitas.get(i).getRadio() || bolitas.get(i).getY() < bolitas.get(i).getRadio()) {
+                    bolitas.get(i).setVy(bolitas.get(i).getVy() * -1);
+                }
+                if (bolitas.get(i).getX() > widthScreen - bolitas.get(i).getRadio() || bolitas.get(i).getX() < bolitas.get(i).getRadio()) {
+                    bolitas.get(i).setVx(bolitas.get(i).getVx() * -1);
                 }
             }
         }
 
         public void drawCourt() {
-
             if (ourHolder.getSurface().isValid()) {
                 canvas = ourHolder.lockCanvas();
                 canvas.drawColor(Color.BLACK);//the background
-                for (Point point : points) {
-                    paint.setColor(Color.argb(255, randint(255), randint(255), randint(255)));
-                    canvas.drawRect(point.x, point.y,
-                            point.x + 20, point.y + 20, paint);
+                for (int i = 0; i < bolitas.size(); i++) {
+                    paint.setColor(bolitas.get(i).getColor());
+                    canvas.drawCircle(bolitas.get(i).getX(), bolitas.get(i).getY(), bolitas.get(i).getRadio(), paint);
                 }
                 ourHolder.unlockCanvasAndPost(canvas);
             }
@@ -131,7 +128,25 @@ public class MainActivity extends Activity {
             ourThread.start();
         }
 
+        @SuppressLint("ClickableViewAccessibility")
+        @Override
+        public boolean onTouchEvent(MotionEvent motionEvent) {
+            switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
+                case MotionEvent.ACTION_DOWN:
+                    Bola bolita = new Bola(motionEvent.getX(), motionEvent.getY(), randint(25));
+                    bolita.setColor(Color.argb(255, randint(255), randint(255), randint(255)));
+                    int v = randint(10);
+                    bolita.setVy(v);
+                    bolita.setVx(v);
+                    bolitas.add(bolita);
+                    break;
 
+                case MotionEvent.ACTION_UP:
+
+                    break;
+            }
+            return true;
+        }
     }
 
     @Override
@@ -169,7 +184,7 @@ public class MainActivity extends Activity {
 
     private int randint(int max){
         Random randomNumber = new Random();
-        return randomNumber.nextInt(max) + 1;
+        return randomNumber.nextInt((max - 5) + 1) + 5;
     }
 
 }
