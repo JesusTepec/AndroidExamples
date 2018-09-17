@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
     int fps;
     int widthScreen;
     int heightScreen;
+    int color;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,8 @@ public class MainActivity extends Activity {
         for(int i = 0; i < 20; i++) {
             widthR = randint(15);
             Bola bolita = new Bola(randint(widthScreen - widthR), randint(50), widthR);
-            bolita.setColor(Color.argb(255, randint(255), randint(255), randint(255)));
+            color = Color.argb(255, randint(255), randint(255), randint(255));
+            bolita.setColor(color);
             bolita.setVx(randFloat(12));
             bolita.setVy(randFloat(12));
             bolitas.add(bolita);
@@ -138,6 +140,7 @@ public class MainActivity extends Activity {
                 case MotionEvent.ACTION_DOWN:
                     float x = motionEvent.getX();
                     float y = motionEvent.getY();
+                    Bola debil = null;
                     for (int i = 0; i < bolitas.size(); i++){
                         bolitas.get(i).setX(x + randIntReal(-2, 2));
                         bolitas.get(i).setY(y + randIntReal(-2, 2));
@@ -145,8 +148,13 @@ public class MainActivity extends Activity {
                         //int direccion = randint(12) * randDireccion();
                         bolitas.get(i).setVx(bolitas.get(i).getVx() * randDireccion());
                         bolitas.get(i).setVy(bolitas.get(i).getVy() * randDireccion());
+                        if(bolitas.get(i).getColor() == color){
 
+                            debil = bolitas.get(i);
+                        }
                     }
+
+                    bolitas.remove(bolitas.size() - 1);
                     break;
 
                 case MotionEvent.ACTION_UP:
