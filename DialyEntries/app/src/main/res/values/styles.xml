@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/toxic_green</item>
+        <item name="colorPrimaryDark">@color/kiwi</item>
+        <item name="colorAccent">@color/yellowy_green</item>
+    </style>
+
+    <!-- The default font for RecyclerView items is too small.
+    The margin is a simple delimiter between the words. -->
+    <style name="entry_description">
+        <item name="android:layout_marginStart">@dimen/middle_padding</item>
+        <item name="android:layout_marginEnd">@dimen/middle_padding</item>
+        <item name="android:layout_marginBottom">@dimen/middle_padding</item>
+        <item name="android:layout_marginTop">@dimen/middle_padding</item>
+        <item name="android:paddingLeft">@dimen/middle_padding</item>
+        <item name="android:background">@color/persian_green</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+    </style>
+
+</resources>
