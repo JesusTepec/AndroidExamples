@@ -1,0 +1,4 @@
+package com.example.appmovie
+
+const val TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMmYxY2UzMWYyNzA1MzI0NzRjMWFhMzJlNTQyMWIwYSIsInN1YiI6IjYwYTg2MDlhYmJkMGIwMDA0MjRlNDUzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wzs5U6Pc83bmjA4h2Ci9w081FHOiWRp7locWL3Op6ds"
+const val API_KEY = "a2f1ce31f270532474c1aa32e5421b0a"

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AppMovie</string>
+    <string name="label_txt_calificacion">Calificación:</string>
+    <string name="label_txt_release_date">Lanzamiento:</string>
+</resources>
