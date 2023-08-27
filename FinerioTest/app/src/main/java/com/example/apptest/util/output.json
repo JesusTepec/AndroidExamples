@@ -1,0 +1,170 @@
+{
+  "data": [
+    {
+      "id": "0225564a-aa26-4c1f-90b5-339a8059aa27",
+      "amount": 18.00,
+      "balance": 0.00,
+      "customDate": "2021-06-16T05:00:00+0000",
+      "customDescription": "Tortillas",
+      "date": "2021-06-16T05:00:00+0000",
+      "dateCreated": "2021-06-16T17:29:16+0000",
+      "deleted": false,
+      "description": "Tortillas",
+      "duplicated": false,
+      "hasConcepts": false,
+      "inResume": true,
+      "lastUpdated": "2021-06-16T17:29:16+0000",
+      "type": "CHARGE",
+      "account": {
+        "id": "c7e65e3d-0ce6-47ab-bf94-cd8caee6ef8f",
+        "availableBalance": 0.00,
+        "balance": 0.00,
+        "dateCreated": "2021-06-15T01:10:46+0000",
+        "deleted": false,
+        "lastUpdated": "2021-06-15T01:10:46+0000",
+        "name": "Efectivo",
+        "number": "2ef11549-8786-484e-9445-e2f988a05b2e",
+        "type": "DEBIT",
+        "user": {
+          "id": "c5dd9df8-066a-4c39-9559-5ed07eb13f05"
+        },
+        "institution": {
+          "id": 4,
+          "code": "DINERIO",
+          "institutionType": "PERSONAL",
+          "name": "Dinerio",
+          "status": "ACTIVE"
+        }
+      },
+      "concepts": [
+        {
+          "id": "0225564a-aa26-4c1f-90b5-339a8059aa27",
+          "amount": 18.00,
+          "description": "Tortillas",
+          "type": "DEFAULT",
+          "movement": null,
+          "category": {
+            "id": "00000000-0000-0000-0000-00000000000e",
+            "color": "#FECF58",
+            "name": "Despensa",
+            "textColor": "#FFFFFF",
+            "parent": {
+              "id": "00000000-0000-0000-0000-000000000002"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "08abc37e-059a-42c4-8a5c-275c7d2b1f68",
+      "amount": 28.00,
+      "balance": 0.00,
+      "customDate": "2021-06-15T01:24:52+0000",
+      "customDescription": "Pan dulce",
+      "date": "2021-06-15T01:24:52+0000",
+      "dateCreated": "2021-06-15T01:26:49+0000",
+      "deleted": false,
+      "description": "Pan dulce",
+      "duplicated": false,
+      "hasConcepts": false,
+      "inResume": true,
+      "lastUpdated": "2021-06-15T01:33:51+0000",
+      "type": "CHARGE",
+      "account": {
+        "id": "c7e65e3d-0ce6-47ab-bf94-cd8caee6ef8f",
+        "availableBalance": 0.00,
+        "balance": 0.00,
+        "dateCreated": "2021-06-15T01:10:46+0000",
+        "deleted": false,
+        "lastUpdated": "2021-06-15T01:10:46+0000",
+        "name": "Efectivo",
+        "number": "2ef11549-8786-484e-9445-e2f988a05b2e",
+        "type": "DEBIT",
+        "user": {
+          "id": "c5dd9df8-066a-4c39-9559-5ed07eb13f05"
+        },
+        "institution": {
+          "id": 4,
+          "code": "DINERIO",
+          "institutionType": "PERSONAL",
+          "name": "Dinerio",
+          "status": "ACTIVE"
+        }
+      },
+      "concepts": [
+        {
+          "id": "08abc37e-059a-42c4-8a5c-275c7d2b1f68",
+          "amount": 28.00,
+          "description": "Pan dulce",
+          "type": "DEFAULT",
+          "movement": null,
+          "category": {
+            "id": "00000000-0000-0000-0000-00000000000e",
+            "color": "#FECF58",
+            "name": "Despensa",
+            "textColor": "#FFFFFF",
+            "parent": {
+              "id": "00000000-0000-0000-0000-000000000002"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "0c8ac5f2-aeff-4d43-860f-2a04744693ca",
+      "amount": 440.00,
+      "balance": 0.00,
+      "customDate": "2021-06-15T01:10:11+0000",
+      "customDescription": "Izzi Internet",
+      "date": "2021-06-15T01:10:11+0000",
+      "dateCreated": "2021-06-15T01:10:46+0000",
+      "deleted": false,
+      "description": "Izzi Internet",
+      "duplicated": false,
+      "hasConcepts": false,
+      "inResume": true,
+      "lastUpdated": "2021-06-15T01:33:54+0000",
+      "type": "CHARGE",
+      "account": {
+        "id": "c7e65e3d-0ce6-47ab-bf94-cd8caee6ef8f",
+        "availableBalance": 0.00,
+        "balance": 0.00,
+        "dateCreated": "2021-06-15T01:10:46+0000",
+        "deleted": false,
+        "lastUpdated": "2021-06-15T01:10:46+0000",
+        "name": "Efectivo",
+        "number": "2ef11549-8786-484e-9445-e2f988a05b2e",
+        "type": "DEBIT",
+        "user": {
+          "id": "c5dd9df8-066a-4c39-9559-5ed07eb13f05"
+        },
+        "institution": {
+          "id": 4,
+          "code": "DINERIO",
+          "institutionType": "PERSONAL",
+          "name": "Dinerio",
+          "status": "ACTIVE"
+        }
+      },
+      "concepts": [
+        {
+          "id": "0c8ac5f2-aeff-4d43-860f-2a04744693ca",
+          "amount": 440.00,
+          "description": "Izzi Internet",
+          "type": "DEFAULT",
+          "movement": null,
+          "category": {
+            "id": "00000000-0000-0000-0000-00000000000c",
+            "color": "#C7E088",
+            "name": "Servicios P\u00fablicos",
+            "textColor": "#FFFFFF",
+            "parent": {
+              "id": "00000000-0000-0000-0000-000000000001"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "size": 3
+}
